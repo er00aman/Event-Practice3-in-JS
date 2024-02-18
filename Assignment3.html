@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Custom div</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Borel&family=Edu+SA+Beginner:wght@600&family=Lugrasimo&family=Playfair+Display&family=Poppins:wght@300&display=swap');
+
+        .fontFamily{
+            font-family: 'Borel', cursive;
+        }
+        .form-label{
+            color: rgb(152, 12, 12);
+            font-weight: bold;
+        }
+        .mb-3 input{
+            border-radius: 0;
+            border: none;
+            border-bottom: 1px solid black;
+        }
+        .buttonMain{
+            background-color: rgb(152, 12, 12);
+            width: 60%;
+            border-radius: 0;
+            height: 28px;
+        }
+        .output{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3 fontFamily">
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Enter height</label>
+                          <input type="number" class="form-control" id="exampleInputHeight1" aria-describedby="emailHelp" name="height">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Enter width</label>
+                          <input type="number" class="form-control" id="exampleInputWidth2" aria-describedby="emailHelp" name="width">
+                        </div>
+                        <div class="mb-3">
+                           <label for="exampleInputEmail1" class="form-label">Enter color</label>
+                           <input type="text" class="form-control" id="exampleInputColor3" aria-describedby="emailHelp" name="background">
+                        </div>
+                        <div class="mb-3">  
+                           <label for="exampleInputEmail1" class="form-label">Enter content</label>
+                           <input type="text" class="form-control" id="exampleInputContent4" aria-describedby="emailHelp" name="content">
+                        </div>
+                        <button type="submit" class="btn btn-primary buttonMain" onclick="onsubmitFun()">Submit</button>
+                </div> 
+                <div class="col-md mt-5 output" id="finalDiv">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+    <script>
+
+        function onsubmitFun(){
+            var height = document.getElementById('exampleInputHeight1').value
+            var width = document.getElementById('exampleInputWidth2').value
+            var background = document.getElementById('exampleInputColor3').value
+            var content = document.getElementById('exampleInputContent4').value
+
+
+            document.getElementById('finalDiv').style.height=height
+            document.getElementById('finalDiv').style.width=width
+            document.getElementById('finalDiv').style.backgroundColor=background
+            document.getElementById('finalDiv').innerHTML=content
+
+        }
+    </script>
+  </body>
+</html>
